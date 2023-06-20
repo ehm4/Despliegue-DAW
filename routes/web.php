@@ -22,28 +22,89 @@ use Illuminate\Support\Facades\Route;
 //    return view('welcome');
 //});
 
-Route::get('/', [ClienteController::class, 'index'])->name('home');
-
-Route::view('login', "all/login")->name('login');
-Route::view('registro', "all/registro")->name('registro');
-Route::view('historia', "all/historia")->name('historia');
-Route::view('historiacliente', "cliente/historia")->name('historiacliente');
-Route::view('contacto', "all/contacto")->name('contacto');
-Route::view('contactocliente', "cliente/contacto")->name('contactocliente');
-Route::view('menu', "all/index")->name('menu');
-Route::view('index', "cliente/index")->middleware('auth')->name('clienteindex');
-Route::view('menuadmin', "admin/menu")->middleware('admin')->name('admin');
-Route::view('editaradmin', "admin/editarclientes")->middleware('admin')->name('editaradmin');
-Route::view('productos', "admin/productos")->middleware('admin')->name('productos');
-Route::view('añadirproducto', "admin/añadirproducto")->middleware('admin')->name('añadirproducto');
-Route::view('añadircategoria', "admin/añadircategoria")->middleware('admin')->name('añadircategoria');
-Route::view('pedido', "cliente/pedido")->middleware('auth')->name('pedido');
-Route::view('pedidosxcliente', "cliente/pedidos")->middleware('auth')->name('pedidosxcliente');
-Route::view('pedidosenadmin', "admin/pedidos")->middleware('admin')->name('pedidosenadmin');
-Route::view('cartacliente', "cliente/carta")->middleware('auth')->name('cartacliente');
-Route::view('carta', "all/carta")->name('carta');
-Route::view('formulario', "cliente/formulario")->middleware('auth')->name('formulariopedido');
-Route::view('categorias', "admin/categorias")->middleware('admin')->name('categoria');
+//Route::get('/', [ClienteController::class, 'index'])->name('home');
+Route::get('/', function () {
+  return view('all.index');
+});
+Route::get('/login', function () {
+  return view('all.login');
+})->name('login');
+//Route::view('registro', "all/registro")->name('registro');
+Route::get('/registro', function () {
+  return view('all.registro');
+})->name('registro');
+//Route::view('historia', "all/historia")->name('historia');
+Route::get('/historia', function () {
+  return view('all.historia');
+})->name('historia');
+//Route::view('historiacliente', "cliente/historia")->name('historiacliente');
+Route::get('/historiacliente', function () {
+  return view('cliente.historia');
+})->middleware('auth')->name('historiacliente');
+//Route::view('contacto', "all/contacto")->name('contacto');
+Route::get('/contacto', function () {
+  return view('all.contacto');
+})->name('contacto');
+//Route::view('contactocliente', "cliente/contacto")->name('contactocliente');
+Route::get('/contactocliente', function () {
+  return view('cliente.contacto');
+})->middleware('auth')->name('contactocliente');
+//Route::view('menu', "all/index")->name('menu');
+Route::get('/menu', function () {
+  return view('all.index');
+})->name('menu');
+//Route::view('index', "cliente/index")->middleware('auth')->name('clienteindex');
+Route::get('/menucliente', function () {
+  return view('cliente.index');
+})->middleware('auth')->name('clienteindex');
+//Route::view('menuadmin', "admin/menu")->middleware('admin')->name('admin');
+Route::get('/menuadmin', function () {
+  return view('admin.menu');
+})->middleware('admin')->name('admin');
+//Route::view('editaradmin', "admin/editarclientes")->middleware('admin')->name('editaradmin');
+Route::get('/editaradmin', function () {
+  return view('admin.editarclientes');
+})->middleware('admin')->name('editaradmin');
+//Route::view('productos', "admin/productos")->middleware('admin')->name('productos');
+Route::get('/productos', function () {
+  return view('admin.productos');
+})->middleware('admin')->name('productos');
+//Route::view('añadirproducto', "admin/añadirproducto")->middleware('admin')->name('añadirproducto');
+Route::get('/añadirproducto', function () {
+  return view('admin.añadirproducto');
+})->middleware('admin')->name('añadirproducto');
+//Route::view('añadircategoria', "admin/añadircategoria")->middleware('admin')->name('añadircategoria');
+Route::get('/añadircategoria', function () {
+  return view('admin.añadircategoria');
+})->middleware('admin')->name('añadircategoria');
+//Route::view('pedido', "cliente/pedido")->middleware('auth')->name('pedido');
+Route::get('/pedido', function () {
+  return view('cliente.pedido');
+})->middleware('auth')->name('pedido');
+//Route::view('pedidosxcliente', "cliente/pedidos")->middleware('auth')->name('pedidosxcliente');
+Route::get('/pedidosxcliente', function () {
+  return view('cliente.pedidos');
+})->middleware('auth')->name('pedidosxcliente');
+//Route::view('pedidosenadmin', "admin/pedidos")->middleware('admin')->name('pedidosenadmin');
+Route::get('/pedidosenadmin', function () {
+  return view('admin.pedidos');
+})->middleware('admin')->name('pedidosenadmin');
+//Route::view('cartacliente', "cliente/carta")->middleware('auth')->name('cartacliente');
+Route::get('/cartacliente', function () {
+  return view('cliente.carta');
+})->middleware('auth')->name('cartacliente');
+//Route::view('carta', "all/carta")->name('carta');
+Route::get('/carta', function () {
+  return view('all.carta');
+})->name('carta');
+//Route::view('formulario', "cliente/formulario")->middleware('auth')->name('formulariopedido');
+Route::get('/formulario', function () {
+  return view('cliente.formulario');
+})->middleware('auth')->name('formulariopedido');
+//Route::view('categorias', "admin/categorias")->middleware('admin')->name('categoria');
+Route::get('/categorias', function () {
+  return view('admin.categorias');
+})->middleware('admin')->name('categoria');
 
 
 Route::post('/validar-registro',[ClienteController::class, 'register'])->name('validar-registro');
@@ -82,8 +143,14 @@ Route::get('/borrar/{id}', [DetallesController::class, 'borrarDetalle'])->middle
 
 //Galería
 Route::get('/cargarImagenes', [ProductoController::class, 'cargarImagenes'])->name('cargarimagenes');
-Route::view('galeria', "all/galeria")->name('galeria');
-Route::view('galeriacliente', "cliente/galeria")->name('galeriacliente');
+//Route::view('galeria', "all/galeria")->name('galeria');
+Route::get('/galeria', function () {
+  return view('all.galeria');
+})->name('galeria');
+//Route::view('galeriacliente', "cliente/galeria")->name('galeriacliente');
+Route::get('/galeriacliente', function () {
+  return view('cliente.galeria');
+})->middleware('auth')->name('galeriacliente');
 
 //Categorias
 Route::post('/editar-categoria', [CategoriaController::class, 'editarCategoriaformulario'])->middleware('admin')->name('editar-categoria');

@@ -12,7 +12,10 @@ use Illuminate\Support\Facades\Auth;
 class ClienteController extends Controller
 {
     public function index(){
-        return redirect(route('menu'));
+        return view('all.index');
+    }
+    public function hola(){
+        return view('admin.clientes');
     }
     public function register(Request $request){
         //validar los datos
