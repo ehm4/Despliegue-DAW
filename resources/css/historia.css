@@ -1,0 +1,204 @@
+@font-face {
+  font-family: 'texto';
+  src: url(../fonts/IBMPLEXSANS/IBMPlexSans-Regular.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'titulos';
+  src: url(../fonts/IBMPLEXSERIF/IBMPlexSerif-Regular.ttf) format('truetype');
+}
+body{
+  background-image: url(../../public/storage/fondohistoria.png);
+  background-repeat:no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+#nav{
+  height:100px;
+  display:flex;
+  margin:0;
+  padding:0;  
+  flex-direction: row;
+  justify-content: space-between;
+}
+#imglogo{
+  width: 100px;
+  height:100px;
+}
+#rrss{
+  display:flex;
+  height:100px;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+#instagram, #facebook{  
+  width:40px;
+  height:40px;
+  margin:5px;
+}
+#medio{
+  display:flex;
+  height:550px;
+  justify-content: space-evenly;
+}
+#fotoernesto{
+  display: flex;
+  width: 400px;
+  height: 350px;
+}
+#textomedio{
+  width: 400px;
+  height:350px;
+  margin:auto;
+}
+#titulohistoria{
+  height:125px;
+  color:#E67753;
+  font-family: "titulos";
+  font-size: 100px;
+  margin:auto;
+  margin-bottom: 25px;;
+  text-align:center;
+
+}
+#textohistoria{
+  height:200px;
+  color:white;
+  font-family: "texto";
+  margin:auto;
+  text-align:center;
+}
+#menu{
+  display:flex; 
+  justify-content: space-evenly;
+}
+#botonmenu{
+  background-color: #121A44;
+  border: 2px;
+  border-style: solid;
+  width:160px;
+  height:20px;
+  margin:10px;
+  margin-top: 20px;
+  border-color: #E67753;
+  color: #E67753;
+  vertical-align: middle;
+}
+#textoboton{
+  font-family: "texto";
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+  line-height:2px; 
+  margin:0;
+}
+#botonmenu:hover{
+  border-color: white;
+  color: white;
+  cursor: pointer;
+}
+#enlacemenu{
+  text-decoration: none;
+}
+#medio1 {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  justify-content: center;
+}
+#medio2{
+  display:flex;
+  flex-direction: column;
+  height:550px;
+}
+#botonesmedio {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  align-content: flex-start;
+}
+#botonesmedio1, #botonesmedio2 {
+  display: flex;
+  height: 87px;
+  align-items: center;
+  justify-content: space-around;
+}
+@media only screen and (max-width: 600px) {
+body{
+  background-image: none;
+  background-color: #121A44;
+}
+#medio {
+  display: flex;
+  width: 100%;
+  height: 700px;
+  margin-top: 0px;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+}
+#medio1 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+}
+#medio2 {
+  display: flex;
+  width: auto;
+  flex-direction: column;
+  height: auto;
+}
+#fotoernesto {
+  display: flex;  
+  width: 100%;
+  height: 350px;
+}
+#nav {
+  height: 100px;
+  width: 100%;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  justify-content: center;
+} 
+#botonesmedio {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  align-items: center;
+}
+#botonesmedio1, #botonesmedio2 {
+  display: flex;
+  height: 100px;
+  width: 100%;
+  align-items: flex-start;
+  justify-content: flex-end;
+  flex-direction: column;
+}
+#textomedio {
+  width: 100%;
+
+  height: 350px;
+   margin: 0;
+}
+#titulohistoria {
+  height: 50px;
+  color: #E67753;
+  font-family: "titulos";
+  font-size: 50px;
+  margin: auto;
+  margin-bottom: 25px;
+  text-align: center;
+  width: 100%;
+}
+#textohistoria {
+  font-size: 18px;
+  height: 200px;
+  /* width: 100%; */
+  color: white;
+  font-family: "texto";
+  margin: auto;
+  text-align: center;
+}
+}

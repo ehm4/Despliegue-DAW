@@ -1,0 +1,130 @@
+/* Definición de fuentes personalizadas */
+@font-face {
+  /* Bloque: font-face (B) */
+  font-family: 'texto';
+  src: url(../fonts/IBMPLEXSANS/IBMPlexSans-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  /* Bloque: font-face (B) */
+  font-family: 'titulos';
+  src: url(../fonts/IBMPLEXSERIF/IBMPlexSerif-Regular.ttf) format('truetype');
+}
+
+/* Estilos generales del cuerpo */
+body {
+  /* Bloque: body (B) */
+  background-color: #121A44;
+}
+
+/* Estilos del menú */
+#menu {
+  /* Bloque: menu (B) */
+  display: flex;
+  margin-bottom: 30px;
+  width: 100%;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Estilos del botón de menú */
+#botonmenu {
+  /* Bloque: botonmenu (B) */
+  background-color: #121A44;
+  border: 2px;
+  border-style: solid;
+  width: 160px;
+  height: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  border-color: #E67753;
+  color: #E67753;
+  display: table;
+  vertical-align: middle;
+}
+
+/* Estilos del texto del botón */
+#textoboton {
+  /* Bloque: textoboton (B) */
+  font-family: "texto";
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 2px;
+  margin: 0;
+}
+
+/* Estilos del botón de menú al pasar el cursor */
+#botonmenu:hover {
+  /* Modificador: hover (M) */
+  border-color: white;
+  color: white;
+  cursor: pointer;
+}
+
+/* Estilos del enlace del menú */
+#enlacemenu {
+  /* Bloque: enlacemenu (B) */
+  display: flex;
+  text-decoration: none;
+  width: 160px;
+}
+
+/* Estilos del logotipo */
+#logo {
+  /* Bloque: logo (B) */
+  width: 330px;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  margin: auto;
+}
+
+/* Estilos de la imagen del logotipo */
+#imglogo {
+  /* Bloque: imglogo (B) */
+  width: 250px;
+}
+
+/* Estilos de las redes sociales */
+#rrss {
+  /* Bloque: rrss (B) */
+  vertical-align: middle;
+  width: 40px;
+}
+
+/* Estilos de los enlaces de inicio de sesión y registro */
+#login,
+#registro {
+  /* Bloque: login y registro (B) */
+  padding-left: 10px;
+  text-decoration: none;
+  color: #E67753;
+}
+
+/* Estilos de los enlaces de inicio de sesión y registro al pasar el cursor */
+#login:hover,
+#registro:hover {
+  /* Modificador: hover (M) */
+  color: white;
+}
+
+/* Estilos del contenedor de inicio de sesión y registro */
+#loginregistro {
+  /* Bloque: loginregistro (B) */
+  text-align: center;
+  font-family: "texto";
+  margin-bottom: 20px;
+}
+
+/* Estilos del pie de página */
+#footer {
+  /* Bloque: footer (B) */
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  color: #E67753;
+  font-size: 10px;
+  font-family: "texto";
+}
